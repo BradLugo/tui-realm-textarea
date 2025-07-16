@@ -54,7 +54,7 @@ impl LineFmt {
     }
 
     fn fmt_none(&self, _: &TextAreaWidget, wrkstr: &str, prepend: &str) -> String {
-        format!("{}{}", wrkstr, prepend)
+        format!("{wrkstr}{prepend}")
     }
 
     /// Make a callchain starting from the fmt str
