@@ -189,30 +189,9 @@ impl Update<Msg> for Model {
 
 // -- components
 
+#[derive(MockComponent)]
 pub struct Editor<'a> {
     component: TextArea<'a>,
-}
-
-impl MockComponent for Editor<'_> {
-    fn view(&mut self, frame: &mut tuirealm::Frame, area: tuirealm::ratatui::layout::Rect) {
-        self.component.view(frame, area);
-    }
-
-    fn query(&self, attr: Attribute) -> Option<AttrValue> {
-        self.component.query(attr)
-    }
-
-    fn attr(&mut self, query: Attribute, attr: AttrValue) {
-        self.component.attr(query, attr)
-    }
-
-    fn state(&self) -> State {
-        self.component.state()
-    }
-
-    fn perform(&mut self, cmd: Cmd) -> CmdResult {
-        self.component.perform(cmd)
-    }
 }
 
 impl Default for Editor<'_> {
